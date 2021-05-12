@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/media/css/style.css" />
+    <title>{%block title %}Mon blog sur les crêes bretonnes{% endblock %}</title>
+</head>
+<body>
+<header>Crêpes bretonnes</header>
+  <nav>
+    {% block nav %}
+    <ul>
+      <li><a href="/">Accueil</a>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+    {% endblock %}
+  </nav>
+
+{% comment %}
+Si on veut rajouter une image on peut mettre:
+
+{% load static %}
+<img src="{% static 'blog/crepes.jpg' %}" alt="Mon image" />
+
+{% endcomment %}
+
+  <section id="content">
+    {% block content %}{% endblock %}
+  </section>
+<footer>&copy; Crêpes bretonnes</footer>
+</body>
+</html>
